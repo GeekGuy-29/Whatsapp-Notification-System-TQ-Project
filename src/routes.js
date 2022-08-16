@@ -65,7 +65,7 @@ router.post("/sms", (req, res) => {
 
 module.exports = router;
 
-const phonenumbers = ['+916306576168','+917860676000'];
+const phonenumbers = ['+916306576168','+917860676000','+916399006589'];
 
 // Added the ability to send whatsapp messages via Twilio Sandbox
 for(var i=0;i<phonenumbers.length;i++){
