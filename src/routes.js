@@ -4,6 +4,13 @@ const router = express.Router();
 // Axios allows us to make HTTP requests from our app
 const axios = require("axios").default;
 
+//Added the client initialisation code
+const twilio = require("twilio");
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = twilio(accountSid, authToken);
+
+
 // Handle a GET request to the root directory,
 // and send "Hello World" as a response
 router.get("/", (req, res) => {
@@ -57,3 +64,13 @@ router.post("/sms", (req, res) => {
 });
 
 module.exports = router;
+
+// Added the ability to send whatsapp messages via Twilio Sandbox
+
+client.messages
+      .create({
+         from: 'whatsapp:+14155238886',
+         body: 'Hello there!',
+         to: 'whatsapp:+916306576168'
+       })
+      .then(message => console.log(message.sid));
