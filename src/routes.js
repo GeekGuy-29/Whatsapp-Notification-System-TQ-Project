@@ -58,19 +58,22 @@ router.post("/sms", (req, res) => {
   res.type(`text/xml`);
   res.send(`
     <Response>
-    <Message>We received your message!</Message>
+    <Message>Sorry we do not have this feature available right now <3</Message>
     </Response>
     `);
 });
 
 module.exports = router;
 
-// Added the ability to send whatsapp messages via Twilio Sandbox
+const phonenumbers = ['+916306576168','+917860676000'];
 
-client.messages
-      .create({
-         from: 'whatsapp:+14155238886',
-         body: 'Hello there!',
-         to: 'whatsapp:+916306576168'
-       })
+// Added the ability to send whatsapp messages via Twilio Sandbox
+for(var i=0;i<phonenumbers.length;i++){
+  client.messages
+        .create({
+           from: 'whatsapp:+14155238886',
+           body: 'Hello there!',
+           to: 'whatsapp:'+phonenumbers[i]
+         })
       .then(message => console.log(message.sid));
+}
