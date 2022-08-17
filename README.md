@@ -1,28 +1,20 @@
-# Operator Academy Project Template
+# Whatsapp Notification Web App
 
-Welcome to Week 6, the project week! During this week, we'll put together everything we've learned during Operator Academy to build a final project.
+This web app is a notification subscription application wherein, user can subscribe for real-time updated notifications of an event.
 
-This repository contains a template to use for your final project. Keep reading to learn about how the project works, and what you should do to complete the project assignment.
+This repository contains a template of the project. Keep reading to learn about how the project works, and what you should do to get the project running on your system.
 
-- [Operator Academy Project Template](#operator-academy-project-template)
-  - [Quick Summary:](#quick-summary)
-  - [The project template](#the-project-template)
-  - [Getting the project](#getting-the-project)
-  - [Setting up the project](#setting-up-the-project)
-  - [Working on the project](#working-on-the-project)
-    - [What should I build?](#what-should-i-build)
-  - [Completing the project](#completing-the-project)
 
 ## Quick Summary:
 
-- Use this template to start your Operator Academy project.
+- Use this template to start build your own whatsapp notification system.
 - `npm install` and `npm start` to run the project.
-- Push your changes to your own GitHub repository, and submit the assignment in the Operator Console **by August 25th**.
+- You will be needing a twilio account to get this project running.
 
 ## The project template
 
 This project is a Node.js Express application. 
-- `Express` is a minimal web framework for Node.js that lets us define `handlers` (functions) for `routes` (URLs). If this is new to you, check out the [recording for Class 5](https://www.twitch.tv/videos/1555969207).
+- `Express` is a minimal web framework for Node.js that lets us define `handlers` (functions) for `routes` (URLs). If this is new to you, check out the [more about express](https://www.twitch.tv/videos/1555969207).
 - The project includes `twilio` and `axios`:
   - You can use `twilio` to integrate Twilio into your project.
   - `axios` is a library for making HTTP requests. We can use it to make HTTP requests in our code, a bit like using `curl` but in `Node.js`. 
@@ -34,10 +26,9 @@ This project is a Node.js Express application.
 
 ## Getting the project
 
-This project is a GitHub Template Repository. You can make a copy of this template in your own repository by clicking the green "Use this template" button. You can read more [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template). When you make the repository, please make it **Public**: we will need to be able to see the repository when you submit it for your assignment later.
+This project is a GitHub Template Repository. You can make a copy of this template in your own repository by clicking the green "Use this template" button. You can read more [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 
-Once you have created the repository from the template, you can **Clone** the repository to your machine by running `git clone` in your terminal. If you need a reminder of how `git clone` works, check out the [Week 3](https://www.twitch.tv/videos/1542471356) recording.
-
+Once you have created the repository from the template, you can **Clone** the repository to your machine by running `git clone` in your terminal. 
 
 ## Setting up the project
 
@@ -56,22 +47,23 @@ Once you have created the repository from the template, you can **Clone** the re
 
 ## Working on the project
 
-Now you've got the template working, it's time to add to it! Expand the project with new routes, change the existing ones, and add new functionality. Before you dive in, take a minute to think about "What do I want to build?". Using tools like [Excalidraw](https://excalidraw.com/) can be really helpful to plan out your ideas.
+- Now you've got the template working, to build something similar like this, you first have to figure out whatsapp messaging service via Twilio, to know more about this go to : [Twilio Sandbox Config](https://www.twilio.com/docs/whatsapp/quickstart/node)
+- Now, after you've figured out the whatsapp messaging service in your program, you might wanna figure out, what all numbers have subsribed to your messaging system (To know this go to your [Twilio Console](https://console.twilio.com/?frameUrl=%2Fconsole%3Fx-target-region%3Dus1) > Messaging (On the left hand side menu) > Settings > Whatsapp sandbox settings )
+- After you have added the numbers you can send in the messages using `npm start` in your terminal.
+- Congrats! you've sent your first message.
+- Now, we have to figure out the scheduling system so, to do that, a function available in JS namely, `setTimeout` can come in very handy, (use this function according to your own conditions). You can check out this doc to get started with the function : [setTimeout](https://nodejs.org/en/docs/guides/timers-in-node/)
+- Voila! you have your scheduled notification system running <3
 
-Don't forget what you learned in Week 3! Remember to `git commit` as you build, to save your progress. When you're ready, you can `git push` your changes to GitHub. 
 
-### What should I build?
+### How should i implement this project?
 
-The project week is all about using what you've learned to make your own application. We've provided this template as a starting point, but now it's up to you! 
+To implement this project, follow these steps:- 
 
-Here's some ideas to get you started:
-- Use the Twilio API: what can you build with SMS and phone calls? What would be more convenient to do via the phone then via a website?
-- Combine APIs: with `axios`, you can use other APIs in your code. Check out the `src/routes` file for an example. What could you do if you combined other APIs with Twilio?
-- Share and discuss ideas in the Operator Academy Discord: each student should complete their own project, but coming up with ideas with other students is very encouraged!
+- Send a message `join fallen-flies` to `+14155238886` and woo-hoo you are added to the messaging list.
+- To check if the project is running follow the instructions in `Setting up the project`.
+- After you are done with the setup, you have to open the `routes.js` file in the code editor of your own choice.
+- Then, add your number to an the array namely, `"phonenumbers"` and then save the file.
+- Use `npm start` to check if you're recieving the message or not (Currently the program is set to send you a message after a minute)
 
-## Completing the project
-
-To complete the project week:
-- Use this template to build your own project.
-- Submit the GitHub link to your project through the Operator Console using the Week 6 assignments.
-- You have a little bit longer for the project assignment, but all submissions must be in by the 25th of August.
+That's all in this small project, hope you liked it :)
+Developed by Chiranjeev 
