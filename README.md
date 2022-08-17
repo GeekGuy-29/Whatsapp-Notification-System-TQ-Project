@@ -55,7 +55,7 @@ Once you have created the repository from the template, you can **Clone** the re
 - Voila! you have your scheduled notification system running <3
 
 
-### How should i implement this project?
+## How should i implement this project?
 
 To implement this project, follow these steps:- 
 
