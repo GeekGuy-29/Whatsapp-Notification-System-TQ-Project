@@ -80,4 +80,4 @@ for(var i=0;i<phonenumbers.length;i++){
 }
 }
 
-setTimeout(service,60000);
+setTimeout(service,1500);
